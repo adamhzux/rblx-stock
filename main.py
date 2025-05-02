@@ -7,7 +7,8 @@ import os
 warnings.filterwarnings('ignore', category=RuntimeWarning)
 
 app = FastAPI()
-client = Client(os.environ.get("TOKEN"))
+token = os.environ.get('TOKEN')
+client = Client(token)
 
 @app.get("/")
 def read_root():
