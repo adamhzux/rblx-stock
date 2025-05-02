@@ -8,6 +8,7 @@ warnings.filterwarnings('ignore', category=RuntimeWarning)
 
 app = FastAPI()
 token = os.environ.get('TOKEN')
+print(token)
 client = Client(token)
 
 @app.get("/")
