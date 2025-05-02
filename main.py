@@ -13,7 +13,7 @@ client = Client(token)
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return token
 
 
 @app.get("/{place_id}")
