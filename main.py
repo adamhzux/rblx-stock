@@ -8,12 +8,12 @@ warnings.filterwarnings('ignore', category=RuntimeWarning)
 
 app = FastAPI()
 token = os.environ.get('TOKEN')
-print(token)
+
 client = Client(token)
 
 @app.get("/")
 def read_root():
-    return token
+    return "what are you looking for????"
 
 
 @app.get("/{place_id}")
