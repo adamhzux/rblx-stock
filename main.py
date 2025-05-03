@@ -3,6 +3,8 @@ from roblox import Client
 from fastapi import FastAPI
 import warnings
 import os
+import json
+
 # suppress RuntimeWarning
 warnings.filterwarnings('ignore', category=RuntimeWarning)
 
@@ -23,7 +25,9 @@ async def read_item(place_id: int):
 
     # If you want playing count, fetch the full universe object
     full_universe = await client.get_universe(universe.id)
-    return  full_universe
+
+    json_universe = json.dumps(full_universe,indent = 4)
+    return  json_universe   
 
 
 #py -m uvicorn rblx-stock:app --reload to run
