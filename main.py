@@ -23,7 +23,7 @@ async def read_item(place_id: int):
 
     # If you want playing count, fetch the full universe object
     full_universe = await client.get_universe(universe.id)
-    return  full_universe.playing
+    return  full_universe
 
 
 #py -m uvicorn rblx-stock:app --reload to run
