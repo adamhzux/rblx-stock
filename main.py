@@ -25,8 +25,14 @@ async def read_item(place_id: int):
 
     # If you want playing count, fetch the full universe object
     full_universe = await client.get_universe(universe.id)
+    data = {
+        "playing" : full_universe.playing,
+        "name" : full_universe.name,
+        "desc" : full_universe.description,
+        "updated" : full_universe.updated
 
-    json_universe = json.dumps(full_universe.__dict__,indent = 4)
+    }
+    json_universe = json.dumps(data,indent = 4)
     return  json_universe   
 
 
