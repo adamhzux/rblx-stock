@@ -28,9 +28,7 @@ async def read_item(place_id: int):
     data = {
         "playing" : full_universe.playing,
         "name" : full_universe.name,
-        "desc" : full_universe.description,
-        "updated" : full_universe.updated
-
+        "desc" : full_universe.description
     }
     json_universe = json.dumps(data,indent = 4)
     return  json_universe   
